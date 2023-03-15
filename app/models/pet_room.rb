@@ -8,8 +8,8 @@ class PetRoom < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
 
   def image_url
-    if image.attached?
-      Rails.application.routes.url_helpers.url_for(image, host: Rails.application.config.action_mailer.default_url_options[:host])
-    end
-  end   
+    Rails.application.routes.url_helpers.url_for(image) if image.attached?, host: Rails.application.config.action_mailer.default_url_options[:host]
+  end
+  
+  
 end

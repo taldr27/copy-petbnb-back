@@ -10,6 +10,7 @@ class Pet < ApplicationRecord
   validates :allergies, presence: true
 
   def image_url
-    Rails.application.routes.url_helpers.url_for(image, host: Rails.application.config.action_mailer.default_url_options[:host]) if image.attached?
-  end  
+    Rails.application.routes.url_helpers.url_for(image) if image.attached?, host: Rails.application.config.action_mailer.default_url_options[:host]
+  end
+    
 end
