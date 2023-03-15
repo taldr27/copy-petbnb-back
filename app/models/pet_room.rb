@@ -12,7 +12,7 @@ class PetRoom < ApplicationRecord
       Rails.application.routes.url_helpers.url_for(
         image.variant(resize_to_limit: [500, 500]),
         only_path: true,
-        host: 'your-host-name-here.com'
+        host: 'https://petbnb.onrender.com/'
       )
     end
   end
