@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   get '/current_user', to: 'current_user#index'
+  get '/public', to: 'pet_rooms#public'
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',
