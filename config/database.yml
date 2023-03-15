@@ -86,6 +86,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: petbnb_back_production
   username: petbnb_back
   password: <%= ENV["PETBNB_BACK_DATABASE_PASSWORD"] %>
