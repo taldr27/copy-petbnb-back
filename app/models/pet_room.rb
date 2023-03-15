@@ -8,12 +8,6 @@ class PetRoom < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than: 0 }
 
   def image_url
-    if image.attached?
-      Rails.application.routes.url_helpers.url_for(
-        image.variant(resize_to_limit: [500, 500]),
-        only_path: true,
-        host: 'https://petbnb.onrender.com/'
-      )
-    end
+    Rails.application.routes.url_helpers.url_for(image) if image.attached?, host: Rails.application.config.action_mailer.default_url_options[:host]
   end
 end
