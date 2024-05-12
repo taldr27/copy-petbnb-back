@@ -83,9 +83,15 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Coming soon...
+- Api documentation in this [link](https://petbnb.onrender.com/api-docs/index.html)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Kanba Board <a name="kanba"></a>
+- **Link to our kanban board [here](https://github.com/orgs/Full-Stack-Capstone/projects/1)**
+- **Initial state of the Kanban board![image](https://user-images.githubusercontent.com/107952724/222493678-9d10c540-6ff5-4ac1-a33a-5954331f9e35.png)**
+- **The project team had 4 members**
+
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -97,7 +103,7 @@ In order to run this project you need:
 - You need to create a new master.key:
   ```
   1. Remove config/master.key and config/credentials. yml.enc
-  2. Run in the terminal: EDITOR=code rails   credentials:edit 
+  2. Run in the terminal: EDITOR=code rails   credentials:edit
   3. This command will create a new master.key and  credentials.yml.enc if they do not exist.
 ### Setup
 
