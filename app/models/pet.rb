@@ -7,7 +7,7 @@ class Pet < ApplicationRecord
   validates :pet_type, presence: true
   validates :date_of_birth, presence: true
   validates :size, presence: true
-  validates :allergies, presence: true
+  validates :allergies, presence: false
 
   def image_url
     Rails.application.routes.url_helpers.url_for(image) if image.attached?

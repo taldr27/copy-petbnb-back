@@ -17,8 +17,15 @@ class PetsController < ApplicationController
 
   # POST /pets
   def create
-    @pet = @user.pets.new(pet_params)
-
+    if params[:pet][:image].present?
+      @pet = @user.pets.new(pet_params)
+      @pet.image.attach(params[:pet][:image])
+    else
+      @pet = @user.pets.new(pet_params.except(:image))
+      default_image_path = Rails.root.join('app', 'assets', 'pet_images', 'cat1.jpg')
+      @pet.image.attach(io: File.open(default_image_path), filename: 'cat1.jpg', content_type: 'image/jpeg')
+    end
+  
     if @pet.save
       render json: @pet, status: :created, location: @pet
     else
